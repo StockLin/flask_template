@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% block link %}{% endblock %}
+
+{% block content %}
+
+  <h1>Aura 計算機</h1>
+  <form>
+    <div class="mb-3">
+      <label for="calc-x" class="form-label">X</label>
+      <input type="text" class="form-control" id="calc-x" aria-describedby="emailHelp">
+      <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+    </div>
+    <div class="mb-3">
+      <label for="calc-y" class="form-label">Y</label>
+      <input type="text" class="form-control" id="calc-y">
+    </div>
+    <div class="mb-3 form-check">
+      <input type="checkbox" class="form-check-input" id="exampleCheck1">
+      <label class="form-check-label" for="exampleCheck1">Check me out</label>
+    </div>
+    <button id="btn-exec" type="button" class="btn btn-primary">執行</button>
+  </form>
+
+  <p>狀態： <label id="status">None</label></p>
+  <label>計算結果： </label><label id="result">No Result</label>
+
+
+{% endblock %}
+
+{% block script %}
+
+  <script type="text/javascript" src="{{ url_for('static', filename='shares_return/calculator.js') }}"></script>
+
+{% endblock %}
